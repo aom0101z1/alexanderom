@@ -36,7 +36,7 @@ const translations = {
     'timeline.1998.title': 'Bulteador & Café Waiter — Belén de Umbría',
     'timeline.1998.text': 'First jobs as a teenager in a small coffee town in Risaralda, Colombia. Unloaded heavy sacks of coffee and plantain from jeeps at a café agency during weekends, and waited tables at a local café — all while studying secondary school.',
     'timeline.2000.title': 'Folk Dance Teacher',
-    'timeline.2000.text': 'Turned a passion for traditional Colombian folk dance into teaching. Led classes and performed, building early skills in leadership, discipline, and cultural expression.',
+    'timeline.2000.text': 'Straight out of secondary school, turned a passion for traditional Colombian folk dance into teaching. Led classes and performed, building early skills in leadership, discipline, and cultural expression.',
     'timeline.2001.title': 'Colombian National Police — Patrullero',
     'timeline.2001.text': 'Joined the Colombian National Police. Completed one year of training as Patrullero, followed by two years of service as a professional police officer — learning discipline, structure, and public service.',
     'timeline.2004.title': 'Moved to London — Cleaner at Westminster',
