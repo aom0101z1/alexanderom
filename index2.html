@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexander Osorio Munera | Engineer. Educator. Entrepreneur. Builder.</title>
+  <meta name="description" content="Portfolio of Alexander Osorio Munera — Software Engineer, Educator, Entrepreneur, and Published Author with 15+ years of experience across tech, education, and business.">
+  <meta name="keywords" content="Alexander Osorio Munera, software engineer, educator, entrepreneur, author, portfolio">
+  <meta name="author" content="Alexander Osorio Munera">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Alexander Osorio Munera | Engineer. Educator. Entrepreneur. Builder.">
+  <meta property="og:description" content="Software Engineer, Educator, Entrepreneur, and Published Author with 15+ years building across tech, education, and business.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alexanderom.co">
+  <meta property="og:image" content="https://alexanderom.co/img/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_CO">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alexander Osorio Munera | Engineer. Educator. Entrepreneur. Builder.">
+  <meta name="twitter:description" content="Software Engineer, Educator, Entrepreneur, and Published Author.">
+  <meta name="twitter:image" content="https://alexanderom.co/img/og-image.jpg">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://alexanderom.co">
+  <link rel="alternate" hreflang="es" href="https://alexanderom.co?lang=es">
+  <link rel="canonical" href="https://alexanderom.co">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style2.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alexander Osorio Munera",
+    "url": "https://alexanderom.co",
+    "jobTitle": "Software Engineer & Educator",
+    "description": "Engineer, Educator, Entrepreneur, Published Author",
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Westminster",
+        "department": "Computer Science"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Wales Trinity Saint David",
+        "department": "MBA"
+      }
+    ],
+    "knowsLanguage": ["English", "Spanish"],
+    "sameAs": [
+      "https://linkedin.com/in/alexanderom",
+      "https://github.com/alexanderom"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__logo">AOM</a>
+    <div class="nav__links" id="navLinks">
+      <a href="#about" class="nav__link" data-i18n="nav.about">About</a>
+      <a href="#timeline" class="nav__link" data-i18n="nav.timeline">Journey</a>
+      <a href="#projects" class="nav__link" data-i18n="nav.projects">Projects</a>
+      <a href="#books" class="nav__link" data-i18n="nav.books">Books</a>
+      <a href="#education" class="nav__link" data-i18n="nav.education">Education</a>
+      <a href="#skills" class="nav__link" data-i18n="nav.skills">Skills</a>
+      <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
+    </div>
+    <div class="nav__actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+        <span class="lang-toggle__option lang-toggle__option--active" data-lang="en">EN</span>
+        <span class="lang-toggle__divider">|</span>
+        <span class="lang-toggle__option" data-lang="es">ES</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-menu__link" data-i18n="nav.about">About</a>
+    <a href="#timeline" class="mobile-menu__link" data-i18n="nav.timeline">Journey</a>
+    <a href="#projects" class="mobile-menu__link" data-i18n="nav.projects">Projects</a>
+    <a href="#books" class="mobile-menu__link" data-i18n="nav.books">Books</a>
+    <a href="#education" class="mobile-menu__link" data-i18n="nav.education">Education</a>
+    <a href="#skills" class="mobile-menu__link" data-i18n="nav.skills">Skills</a>
+    <a href="#contact" class="mobile-menu__link" data-i18n="nav.contact">Contact</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__orbs">
+      <div class="hero__orb hero__orb--orange"></div>
+      <div class="hero__orb hero__orb--teal"></div>
+      <div class="hero__orb hero__orb--purple"></div>
+    </div>
+    <div class="hero__content">
+      <h1 class="hero__name">
+        <span class="hero__name-line reveal-text">ALEXANDER</span>
+        <span class="hero__name-line reveal-text" style="animation-delay: 0.2s">OSORIO</span>
+        <span class="hero__name-line reveal-text" style="animation-delay: 0.4s">MUNERA</span>
+      </h1>
+      <p class="hero__tagline reveal-text" style="animation-delay: 0.7s" data-i18n="hero.tagline">
+        Engineer. Educator. Entrepreneur. Builder.
+      </p>
+      <div class="hero__cta reveal-text" style="animation-delay: 1s">
+        <a href="#projects" class="btn btn--primary" data-i18n="hero.cta">View My Work</a>
+        <a href="#contact" class="btn btn--outline" data-i18n="hero.contact">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <div class="hero__scroll-indicator"></div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section section--alt" id="about">
+    <div class="container">
+      <h2 class="section__title anim-fade-up" data-i18n="about.title">About Me</h2>
+      <div class="about">
+        <div class="about__photo anim-fade-up">
+          <div class="about__photo-frame">
+            <div class="about__photo-placeholder">AOM</div>
+          </div>
+        </div>
+        <div class="about__text">
+          <p class="about__lead anim-fade-up" data-i18n="about.lead">
+            From unloading coffee sacks in a small town in Risaralda, to policing the streets of Colombia, to cleaning floors at the University of Westminster — and graduating First Class Honours from that same building.
+          </p>
+          <p class="about__body anim-fade-up" data-i18n="about.body">
+            That journey shaped everything I do. From London to Colombia, I've built software products, published 11+ books, taught thousands of students, and launched businesses. I believe in the power of relentless curiosity, disciplined execution, and sharing knowledge freely.
+          </p>
+          <p class="about__body anim-fade-up" data-i18n="about.body2">
+            Today I work at the intersection of technology, education, and entrepreneurship — building tools that solve real problems and teaching the next generation of builders.
+          </p>
+          <div class="about__stats">
+            <div class="stat anim-fade-up">
+              <span class="stat__number" data-count="15">0</span><span class="stat__plus">+</span>
+              <span class="stat__label" data-i18n="about.stat.years">Years Experience</span>
+            </div>
+            <div class="stat anim-fade-up">
+              <span class="stat__number" data-count="1000">0</span><span class="stat__plus">s+</span>
+              <span class="stat__label" data-i18n="about.stat.students">Students Taught</span>
+            </div>
+            <div class="stat anim-fade-up">
+              <span class="stat__number" data-count="11">0</span><span class="stat__plus">+</span>
+              <span class="stat__label" data-i18n="about.stat.books">Books Published</span>
+            </div>
+            <div class="stat anim-fade-up">
+              <span class="stat__number" data-count="8">0</span><span class="stat__plus">+</span>
+              <span class="stat__label" data-i18n="about.stat.projects">Tech Projects</span>
+            </div>
+            <div class="stat anim-fade-up">
+              <span class="stat__number" data-count="3">0</span>
+              <span class="stat__label" data-i18n="about.stat.degrees">Degrees</span>
+            </div>
+            <div class="stat anim-fade-up">
+              <span class="stat__number" data-count="2">0</span>
+              <span class="stat__label" data-i18n="about.stat.languages">Languages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section class="section" id="timeline">
+    <div class="container">
+      <h2 class="section__title anim-fade-up" data-i18n="timeline.title">My Journey</h2>
+      <p class="section__subtitle anim-fade-up" data-i18n="timeline.subtitle">From a coffee town in Risaralda to building across continents</p>
+      <div class="timeline">
+
+        <div class="timeline__item timeline__item--work anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">~1998</span>
+            <h3 class="timeline__heading" data-i18n="timeline.1998.title">Bulteador & Café Waiter — Belén de Umbría</h3>
+            <p class="timeline__text" data-i18n="timeline.1998.text">First jobs as a teenager in a small coffee town in Risaralda, Colombia. Unloaded heavy sacks of coffee and plantain from jeeps at a café agency during weekends, and waited tables at a local café — all while studying secondary school.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--entrepreneurship anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">~2000</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2000.title">Folk Dance Teacher</h3>
+            <p class="timeline__text" data-i18n="timeline.2000.text">Turned a passion for traditional Colombian folk dance into teaching. Led classes and performed, building early skills in leadership, discipline, and cultural expression.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--work anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2001</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2001.title">Colombian National Police — Patrullero</h3>
+            <p class="timeline__text" data-i18n="timeline.2001.text">Joined the Colombian National Police. Completed one year of training as Patrullero, followed by two years of service as a professional police officer — learning discipline, structure, and public service.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--work anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2004</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2004.title">Moved to London — Cleaner at Westminster</h3>
+            <p class="timeline__text" data-i18n="timeline.2004.text">Emigrated to London from Colombia. Started working as a cleaner at the University of Westminster — the same building where, years later, he would graduate with First Class Honours.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--education anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2006</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2006.title">Westminster University — BSc Computer Science</h3>
+            <p class="timeline__text" data-i18n="timeline.2006.text">Enrolled in Computer Science at the same university where I once cleaned floors. Graduated with First Class Honours.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--work anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2008</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2008.title">Freelance Web Developer</h3>
+            <p class="timeline__text" data-i18n="timeline.2008.text">Started freelancing, building websites and web applications for small businesses in London.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--work anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2009</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2009.title">Telecom Engineer — WiMAX</h3>
+            <p class="timeline__text" data-i18n="timeline.2009.text">Worked in telecommunications, earning WiMAX certification and gaining deep expertise in network infrastructure.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--education anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2011</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2011.title">MBA — University of Wales</h3>
+            <p class="timeline__text" data-i18n="timeline.2011.text">Completed Master of Business Administration at the University of Wales Trinity Saint David, blending tech with business strategy.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--entrepreneurship anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2013</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2013.title">Return to Colombia — Teaching & Entrepreneurship</h3>
+            <p class="timeline__text" data-i18n="timeline.2013.text">Returned to Colombia to teach university courses and launch entrepreneurial ventures in education and technology.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--entrepreneurship anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2015</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2015.title">Published First Books</h3>
+            <p class="timeline__text" data-i18n="timeline.2015.text">Began publishing career with books on business, cryptocurrency, and emotional intelligence. Now 11+ titles on Amazon.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--work anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2017</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2017.title">Ciudad Bilingue Platform</h3>
+            <p class="timeline__text" data-i18n="timeline.2017.text">Built a bilingual education platform connecting language learners with tutors, scaling to hundreds of users.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--education anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2018</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2018.title">IP Diploma — UPB</h3>
+            <p class="timeline__text" data-i18n="timeline.2018.text">Earned Intellectual Property Diploma from Universidad Pontificia Bolivariana, adding legal expertise to the toolkit.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--work anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2020</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2020.title">Axiom & TutorBox Launch</h3>
+            <p class="timeline__text" data-i18n="timeline.2020.text">Launched Axiom project management platform and TutorBox tutoring marketplace. Full-stack development with modern frameworks.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--work anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2022</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2022.title">GeoRef & La Lupa</h3>
+            <p class="timeline__text" data-i18n="timeline.2022.text">Built GeoRef (geographic reference platform) and La Lupa (investigative data tool). Expanding into GIS and data analytics.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--education anim-fade-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2024</span>
+            <h3 class="timeline__heading" data-i18n="timeline.2024.title">Google Analytics Certified</h3>
+            <p class="timeline__text" data-i18n="timeline.2024.text">Added Google Analytics certification, strengthening data-driven decision making and digital strategy capabilities.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section section--alt" id="projects">
+    <div class="container">
+      <h2 class="section__title anim-fade-up" data-i18n="projects.title">Software Projects</h2>
+      <p class="section__subtitle anim-fade-up" data-i18n="projects.subtitle">Building solutions that solve real problems</p>
+      <div class="projects-grid">
+
+        <div class="project-card glass-card anim-fade-up">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--orange)">AX</div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Axiom</h3>
+            <p class="project-card__desc" data-i18n="projects.axiom.desc">Project management platform with task tracking, team collaboration, and real-time dashboards.</p>
+            <div class="project-card__tags">
+              <span class="tag tag--framework">React</span>
+              <span class="tag tag--lang">Node.js</span>
+              <span class="tag tag--data">MongoDB</span>
+              <span class="tag tag--framework">Express</span>
+            </div>
+            <span class="project-card__status project-card__status--active" data-i18n="projects.status.active">Active</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card anim-fade-up">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--teal)">CB</div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Ciudad Bilingue</h3>
+            <p class="project-card__desc" data-i18n="projects.ciudadbilingue.desc">Bilingual education platform connecting language learners with certified tutors across Colombia.</p>
+            <div class="project-card__tags">
+              <span class="tag tag--lang">PHP</span>
+              <span class="tag tag--framework">Laravel</span>
+              <span class="tag tag--data">MySQL</span>
+              <span class="tag tag--lang">JavaScript</span>
+            </div>
+            <span class="project-card__status project-card__status--active" data-i18n="projects.status.active">Active</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card anim-fade-up">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--purple)">TB</div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">TutorBox</h3>
+            <p class="project-card__desc" data-i18n="projects.tutorbox.desc">Online tutoring marketplace with scheduling, video integration, and payment processing.</p>
+            <div class="project-card__tags">
+              <span class="tag tag--lang">Python</span>
+              <span class="tag tag--framework">Django</span>
+              <span class="tag tag--data">PostgreSQL</span>
+              <span class="tag tag--framework">REST API</span>
+            </div>
+            <span class="project-card__status project-card__status--active" data-i18n="projects.status.active">Active</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card anim-fade-up">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--yellow)">GR</div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">GeoRef</h3>
+            <p class="project-card__desc" data-i18n="projects.georef.desc">Geographic reference and mapping platform for spatial data visualization and analysis.</p>
+            <div class="project-card__tags">
+              <span class="tag tag--lang">JavaScript</span>
+              <span class="tag tag--framework">Leaflet</span>
+              <span class="tag tag--data">GeoJSON</span>
+              <span class="tag tag--lang">Python</span>
+            </div>
+            <span class="project-card__status project-card__status--active" data-i18n="projects.status.active">Active</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card anim-fade-up">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--orange)">NA</div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">NewsApp</h3>
+            <p class="project-card__desc" data-i18n="projects.newsapp.desc">News aggregation application with personalized feeds, category filtering, and offline reading.</p>
+            <div class="project-card__tags">
+              <span class="tag tag--framework">React Native</span>
+              <span class="tag tag--lang">TypeScript</span>
+              <span class="tag tag--data">Firebase</span>
+              <span class="tag tag--framework">REST API</span>
+            </div>
+            <span class="project-card__status project-card__status--completed" data-i18n="projects.status.completed">Completed</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card anim-fade-up">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--teal)">LL</div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">La Lupa</h3>
+            <p class="project-card__desc" data-i18n="projects.lalupa.desc">Investigative data tool for journalists and researchers with advanced search and visualization.</p>
+            <div class="project-card__tags">
+              <span class="tag tag--lang">Python</span>
+              <span class="tag tag--data">Elasticsearch</span>
+              <span class="tag tag--framework">Flask</span>
+              <span class="tag tag--framework">D3.js</span>
+            </div>
+            <span class="project-card__status project-card__status--active" data-i18n="projects.status.active">Active</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card anim-fade-up">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--purple)">TT</div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">TaxiTutor</h3>
+            <p class="project-card__desc" data-i18n="projects.taxitutor.desc">Study aid application for London taxi knowledge test with route planning and landmark quizzes.</p>
+            <div class="project-card__tags">
+              <span class="tag tag--lang">Java</span>
+              <span class="tag tag--framework">Android</span>
+              <span class="tag tag--data">SQLite</span>
+              <span class="tag tag--framework">Google Maps</span>
+            </div>
+            <span class="project-card__status project-card__status--completed" data-i18n="projects.status.completed">Completed</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card anim-fade-up">
+          <div class="project-card__image">
+            <div class="project-card__placeholder" style="--accent: var(--yellow)">CR</div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">CRM System</h3>
+            <p class="project-card__desc" data-i18n="projects.crm.desc">Custom CRM for managing student relationships, enrollment tracking, and communication workflows.</p>
+            <div class="project-card__tags">
+              <span class="tag tag--lang">C#</span>
+              <span class="tag tag--framework">.NET</span>
+              <span class="tag tag--data">SQL Server</span>
+              <span class="tag tag--framework">Azure</span>
+            </div>
+            <span class="project-card__status project-card__status--completed" data-i18n="projects.status.completed">Completed</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOOKS ============ -->
+  <section class="section" id="books">
+    <div class="container">
+      <h2 class="section__title anim-fade-up" data-i18n="books.title">Published Books</h2>
+      <p class="section__subtitle anim-fade-up" data-i18n="books.subtitle">11+ titles on Amazon covering business, crypto, emotional intelligence, and academia</p>
+      <div class="books__filters anim-fade-up">
+        <button class="filter-pill filter-pill--active" data-filter="all" data-i18n="books.filter.all">All</button>
+        <button class="filter-pill" data-filter="business" data-i18n="books.filter.business">Business</button>
+        <button class="filter-pill" data-filter="crypto" data-i18n="books.filter.crypto">Crypto</button>
+        <button class="filter-pill" data-filter="emotional" data-i18n="books.filter.emotional">Emotional Intelligence</button>
+        <button class="filter-pill" data-filter="academic" data-i18n="books.filter.academic">Academic</button>
+      </div>
+      <div class="books-carousel" id="booksCarousel">
+        <div class="books-carousel__track">
+
+          <div class="book-card anim-fade-up" data-category="business">
+            <div class="book-card__cover">
+              <div class="book-card__placeholder" style="--accent: var(--orange)">
+                <span class="book-card__icon">&#128214;</span>
+                <span class="book-card__short-title">Business Strategy</span>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h4 class="book-card__title" data-i18n="books.1.title">Estrategia Empresarial para Emprendedores</h4>
+              <p class="book-card__category" data-i18n="books.1.cat">Business</p>
+              <span class="book-card__isbn mono">ASIN: B08XYZ1234</span>
+              <a href="#" class="book-card__link" data-i18n="books.amazon">View on Amazon &rarr;</a>
+            </div>
+          </div>
+
+          <div class="book-card anim-fade-up" data-category="crypto">
+            <div class="book-card__cover">
+              <div class="book-card__placeholder" style="--accent: var(--teal)">
+                <span class="book-card__icon">&#9939;</span>
+                <span class="book-card__short-title">Bitcoin</span>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h4 class="book-card__title" data-i18n="books.2.title">Bitcoin: Guia Completa para Principiantes</h4>
+              <p class="book-card__category" data-i18n="books.2.cat">Crypto</p>
+              <span class="book-card__isbn mono">ASIN: B08XYZ1235</span>
+              <a href="#" class="book-card__link" data-i18n="books.amazon">View on Amazon &rarr;</a>
+            </div>
+          </div>
+
+          <div class="book-card anim-fade-up" data-category="emotional">
+            <div class="book-card__cover">
+              <div class="book-card__placeholder" style="--accent: var(--purple)">
+                <span class="book-card__icon">&#129504;</span>
+                <span class="book-card__short-title">EQ</span>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h4 class="book-card__title" data-i18n="books.3.title">Inteligencia Emocional: El Poder Interior</h4>
+              <p class="book-card__category" data-i18n="books.3.cat">Emotional Intelligence</p>
+              <span class="book-card__isbn mono">ASIN: B08XYZ1236</span>
+              <a href="#" class="book-card__link" data-i18n="books.amazon">View on Amazon &rarr;</a>
+            </div>
+          </div>
+
+          <div class="book-card anim-fade-up" data-category="crypto">
+            <div class="book-card__cover">
+              <div class="book-card__placeholder" style="--accent: var(--yellow)">
+                <span class="book-card__icon">&#128176;</span>
+                <span class="book-card__short-title">Ethereum</span>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h4 class="book-card__title" data-i18n="books.4.title">Ethereum y Smart Contracts</h4>
+              <p class="book-card__category" data-i18n="books.4.cat">Crypto</p>
+              <span class="book-card__isbn mono">ASIN: B08XYZ1237</span>
+              <a href="#" class="book-card__link" data-i18n="books.amazon">View on Amazon &rarr;</a>
+            </div>
+          </div>
+
+          <div class="book-card anim-fade-up" data-category="business">
+            <div class="book-card__cover">
+              <div class="book-card__placeholder" style="--accent: var(--orange)">
+                <span class="book-card__icon">&#128188;</span>
+                <span class="book-card__short-title">Marketing</span>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h4 class="book-card__title" data-i18n="books.5.title">Marketing Digital para Negocios</h4>
+              <p class="book-card__category" data-i18n="books.5.cat">Business</p>
+              <span class="book-card__isbn mono">ASIN: B08XYZ1238</span>
+              <a href="#" class="book-card__link" data-i18n="books.amazon">View on Amazon &rarr;</a>
+            </div>
+          </div>
+
+          <div class="book-card anim-fade-up" data-category="emotional">
+            <div class="book-card__cover">
+              <div class="book-card__placeholder" style="--accent: var(--teal)">
+                <span class="book-card__icon">&#128161;</span>
+                <span class="book-card__short-title">Mindset</span>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h4 class="book-card__title" data-i18n="books.6.title">Mentalidad de Crecimiento</h4>
+              <p class="book-card__category" data-i18n="books.6.cat">Emotional Intelligence</p>
+              <span class="book-card__isbn mono">ASIN: B08XYZ1239</span>
+              <a href="#" class="book-card__link" data-i18n="books.amazon">View on Amazon &rarr;</a>
+            </div>
+          </div>
+
+          <div class="book-card anim-fade-up" data-category="academic">
+            <div class="book-card__cover">
+              <div class="book-card__placeholder" style="--accent: var(--purple)">
+                <span class="book-card__icon">&#127891;</span>
+                <span class="book-card__short-title">Research</span>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h4 class="book-card__title" data-i18n="books.7.title">Metodologia de Investigacion</h4>
+              <p class="book-card__category" data-i18n="books.7.cat">Academic</p>
+              <span class="book-card__isbn mono">ISBN: 978-0-1234-5678</span>
+              <a href="#" class="book-card__link" data-i18n="books.amazon">View on Amazon &rarr;</a>
+            </div>
+          </div>
+
+          <div class="book-card anim-fade-up" data-category="crypto">
+            <div class="book-card__cover">
+              <div class="book-card__placeholder" style="--accent: var(--yellow)">
+                <span class="book-card__icon">&#128279;</span>
+                <span class="book-card__short-title">Blockchain</span>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h4 class="book-card__title" data-i18n="books.8.title">Blockchain: La Revolucion Tecnologica</h4>
+              <p class="book-card__category" data-i18n="books.8.cat">Crypto</p>
+              <span class="book-card__isbn mono">ASIN: B08XYZ1241</span>
+              <a href="#" class="book-card__link" data-i18n="books.amazon">View on Amazon &rarr;</a>
+            </div>
+          </div>
+
+          <div class="book-card anim-fade-up" data-category="business">
+            <div class="book-card__cover">
+              <div class="book-card__placeholder" style="--accent: var(--teal)">
+                <span class="book-card__icon">&#128200;</span>
+                <span class="book-card__short-title">Finanzas</span>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h4 class="book-card__title" data-i18n="books.9.title">Finanzas Personales Inteligentes</h4>
+              <p class="book-card__category" data-i18n="books.9.cat">Business</p>
+              <span class="book-card__isbn mono">ASIN: B08XYZ1242</span>
+              <a href="#" class="book-card__link" data-i18n="books.amazon">View on Amazon &rarr;</a>
+            </div>
+          </div>
+
+          <div class="book-card anim-fade-up" data-category="emotional">
+            <div class="book-card__cover">
+              <div class="book-card__placeholder" style="--accent: var(--orange)">
+                <span class="book-card__icon">&#128150;</span>
+                <span class="book-card__short-title">Resilience</span>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h4 class="book-card__title" data-i18n="books.10.title">Resiliencia: El Arte de Levantarse</h4>
+              <p class="book-card__category" data-i18n="books.10.cat">Emotional Intelligence</p>
+              <span class="book-card__isbn mono">ASIN: B08XYZ1243</span>
+              <a href="#" class="book-card__link" data-i18n="books.amazon">View on Amazon &rarr;</a>
+            </div>
+          </div>
+
+          <div class="book-card anim-fade-up" data-category="academic">
+            <div class="book-card__cover">
+              <div class="book-card__placeholder" style="--accent: var(--purple)">
+                <span class="book-card__icon">&#128187;</span>
+                <span class="book-card__short-title">CompSci</span>
+              </div>
+            </div>
+            <div class="book-card__info">
+              <h4 class="book-card__title" data-i18n="books.11.title">Fundamentos de Programacion</h4>
+              <p class="book-card__category" data-i18n="books.11.cat">Academic</p>
+              <span class="book-card__isbn mono">ISBN: 978-0-1234-5679</span>
+              <a href="#" class="book-card__link" data-i18n="books.amazon">View on Amazon &rarr;</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION & CERTIFICATIONS ============ -->
+  <section class="section section--alt" id="education">
+    <div class="container">
+      <h2 class="section__title anim-fade-up" data-i18n="education.title">Education & Certifications</h2>
+      <div class="education-grid">
+
+        <div class="edu-card glass-card anim-fade-up" style="--border-accent: var(--purple)">
+          <div class="edu-card__icon">&#127891;</div>
+          <h3 class="edu-card__degree" data-i18n="education.bsc.degree">BSc Computer Science (First Class Honours)</h3>
+          <p class="edu-card__institution" data-i18n="education.bsc.institution">University of Westminster, London</p>
+          <span class="edu-card__year">2006 — 2009</span>
+        </div>
+
+        <div class="edu-card glass-card anim-fade-up" style="--border-accent: var(--orange)">
+          <div class="edu-card__icon">&#127891;</div>
+          <h3 class="edu-card__degree" data-i18n="education.mba.degree">MBA — Master of Business Administration</h3>
+          <p class="edu-card__institution" data-i18n="education.mba.institution">University of Wales Trinity Saint David</p>
+          <span class="edu-card__year">2011 — 2012</span>
+        </div>
+
+        <div class="edu-card glass-card anim-fade-up" style="--border-accent: var(--teal)">
+          <div class="edu-card__icon">&#128220;</div>
+          <h3 class="edu-card__degree" data-i18n="education.ip.degree">Intellectual Property Diploma</h3>
+          <p class="edu-card__institution" data-i18n="education.ip.institution">Universidad Pontificia Bolivariana (UPB)</p>
+          <span class="edu-card__year">2018</span>
+        </div>
+
+        <div class="edu-card glass-card anim-fade-up" style="--border-accent: var(--yellow)">
+          <div class="edu-card__icon">&#128225;</div>
+          <h3 class="edu-card__degree" data-i18n="education.wimax.degree">WiMAX Certification</h3>
+          <p class="edu-card__institution" data-i18n="education.wimax.institution">WiMAX Forum</p>
+          <span class="edu-card__year">2009</span>
+        </div>
+
+        <div class="edu-card glass-card anim-fade-up" style="--border-accent: var(--orange)">
+          <div class="edu-card__icon">&#128202;</div>
+          <h3 class="edu-card__degree" data-i18n="education.ga.degree">Google Analytics Certification</h3>
+          <p class="edu-card__institution" data-i18n="education.ga.institution">Google</p>
+          <span class="edu-card__year">2024</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <h2 class="section__title anim-fade-up" data-i18n="skills.title">Skills & Tech Stack</h2>
+      <div class="skills-grid">
+
+        <div class="skill-group anim-fade-up">
+          <h3 class="skill-group__title" data-i18n="skills.languages">Programming Languages</h3>
+          <div class="skill-group__pills">
+            <span class="skill-pill" style="--pill-color: var(--orange)">JavaScript</span>
+            <span class="skill-pill" style="--pill-color: var(--teal)">Python</span>
+            <span class="skill-pill" style="--pill-color: var(--purple)">C#</span>
+            <span class="skill-pill" style="--pill-color: var(--yellow)">Java</span>
+            <span class="skill-pill" style="--pill-color: var(--orange)">TypeScript</span>
+            <span class="skill-pill" style="--pill-color: var(--teal)">PHP</span>
+            <span class="skill-pill" style="--pill-color: var(--purple)">SQL</span>
+            <span class="skill-pill" style="--pill-color: var(--yellow)">HTML/CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-group anim-fade-up">
+          <h3 class="skill-group__title" data-i18n="skills.frameworks">Frameworks & Libraries</h3>
+          <div class="skill-group__pills">
+            <span class="skill-pill" style="--pill-color: var(--teal)">React</span>
+            <span class="skill-pill" style="--pill-color: var(--orange)">Node.js</span>
+            <span class="skill-pill" style="--pill-color: var(--purple)">Django</span>
+            <span class="skill-pill" style="--pill-color: var(--yellow)">Laravel</span>
+            <span class="skill-pill" style="--pill-color: var(--teal)">.NET</span>
+            <span class="skill-pill" style="--pill-color: var(--orange)">Express</span>
+            <span class="skill-pill" style="--pill-color: var(--purple)">Flask</span>
+            <span class="skill-pill" style="--pill-color: var(--yellow)">React Native</span>
+          </div>
+        </div>
+
+        <div class="skill-group anim-fade-up">
+          <h3 class="skill-group__title" data-i18n="skills.aiml">AI / ML</h3>
+          <div class="skill-group__pills">
+            <span class="skill-pill" style="--pill-color: var(--purple)">TensorFlow</span>
+            <span class="skill-pill" style="--pill-color: var(--teal)">Scikit-learn</span>
+            <span class="skill-pill" style="--pill-color: var(--orange)">NLP</span>
+            <span class="skill-pill" style="--pill-color: var(--yellow)">OpenAI API</span>
+            <span class="skill-pill" style="--pill-color: var(--purple)">Pandas</span>
+          </div>
+        </div>
+
+        <div class="skill-group anim-fade-up">
+          <h3 class="skill-group__title" data-i18n="skills.data">Data & Databases</h3>
+          <div class="skill-group__pills">
+            <span class="skill-pill" style="--pill-color: var(--yellow)">PostgreSQL</span>
+            <span class="skill-pill" style="--pill-color: var(--orange)">MongoDB</span>
+            <span class="skill-pill" style="--pill-color: var(--teal)">MySQL</span>
+            <span class="skill-pill" style="--pill-color: var(--purple)">Firebase</span>
+            <span class="skill-pill" style="--pill-color: var(--yellow)">Elasticsearch</span>
+            <span class="skill-pill" style="--pill-color: var(--orange)">Redis</span>
+          </div>
+        </div>
+
+        <div class="skill-group anim-fade-up">
+          <h3 class="skill-group__title" data-i18n="skills.geo">Maps & GIS</h3>
+          <div class="skill-group__pills">
+            <span class="skill-pill" style="--pill-color: var(--teal)">Leaflet</span>
+            <span class="skill-pill" style="--pill-color: var(--orange)">Google Maps API</span>
+            <span class="skill-pill" style="--pill-color: var(--purple)">GeoJSON</span>
+            <span class="skill-pill" style="--pill-color: var(--yellow)">PostGIS</span>
+          </div>
+        </div>
+
+        <div class="skill-group anim-fade-up">
+          <h3 class="skill-group__title" data-i18n="skills.telecom">Telecom</h3>
+          <div class="skill-group__pills">
+            <span class="skill-pill" style="--pill-color: var(--orange)">WiMAX</span>
+            <span class="skill-pill" style="--pill-color: var(--teal)">Network Architecture</span>
+            <span class="skill-pill" style="--pill-color: var(--purple)">RF Engineering</span>
+          </div>
+        </div>
+
+        <div class="skill-group anim-fade-up">
+          <h3 class="skill-group__title" data-i18n="skills.teaching">Teaching & Education</h3>
+          <div class="skill-group__pills">
+            <span class="skill-pill" style="--pill-color: var(--purple)">Curriculum Design</span>
+            <span class="skill-pill" style="--pill-color: var(--orange)">EdTech</span>
+            <span class="skill-pill" style="--pill-color: var(--teal)">LMS Platforms</span>
+            <span class="skill-pill" style="--pill-color: var(--yellow)">Academic Research</span>
+          </div>
+        </div>
+
+        <div class="skill-group anim-fade-up">
+          <h3 class="skill-group__title" data-i18n="skills.business">Business</h3>
+          <div class="skill-group__pills">
+            <span class="skill-pill" style="--pill-color: var(--yellow)">Strategic Planning</span>
+            <span class="skill-pill" style="--pill-color: var(--orange)">Digital Marketing</span>
+            <span class="skill-pill" style="--pill-color: var(--teal)">Product Management</span>
+            <span class="skill-pill" style="--pill-color: var(--purple)">Google Analytics</span>
+          </div>
+        </div>
+
+        <div class="skill-group anim-fade-up">
+          <h3 class="skill-group__title" data-i18n="skills.human_languages">Human Languages</h3>
+          <div class="skill-group__pills">
+            <span class="skill-pill" style="--pill-color: var(--orange)">English (Fluent)</span>
+            <span class="skill-pill" style="--pill-color: var(--teal)">Spanish (Native)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section--alt" id="contact">
+    <div class="container">
+      <div class="contact">
+        <div class="contact__info anim-fade-up">
+          <h2 class="section__title" data-i18n="contact.title">Let's Build Something</h2>
+          <p class="contact__text" data-i18n="contact.text">
+            Whether you're looking for a collaborator, a speaker, or just want to connect — I'd love to hear from you.
+          </p>
+          <div class="contact__links">
+            <a href="mailto:hello@alexanderom.com" class="contact__link">
+              <span class="contact__link-icon">&#9993;</span>
+              hello@alexanderom.com
+            </a>
+            <a href="https://linkedin.com/in/alexanderom" target="_blank" rel="noopener" class="contact__link">
+              <span class="contact__link-icon">&#128279;</span>
+              LinkedIn
+            </a>
+            <a href="https://github.com/alexanderom" target="_blank" rel="noopener" class="contact__link">
+              <span class="contact__link-icon">&#128187;</span>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <form class="contact__form anim-fade-up" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-group">
+            <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
+            <label for="name" class="form-label" data-i18n="contact.form.name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
+            <label for="email" class="form-label" data-i18n="contact.form.email">Your Email</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" class="form-input form-textarea" placeholder=" " rows="5" required></textarea>
+            <label for="message" class="form-label" data-i18n="contact.form.message">Your Message</label>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full" data-i18n="contact.form.send">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <span class="footer__logo">AOM</span>
+          <p class="footer__tagline" data-i18n="footer.tagline">Made with code &amp; coffee in Colombia &#9749;</p>
+        </div>
+        <nav class="footer__nav">
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#timeline" data-i18n="nav.timeline">Journey</a>
+          <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#books" data-i18n="nav.books">Books</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="footer__social">
+          <a href="https://linkedin.com/in/alexanderom" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://github.com/alexanderom" target="_blank" rel="noopener" aria-label="GitHub">gh</a>
+          <a href="mailto:hello@alexanderom.com" aria-label="Email">@</a>
+        </div>
+      </div>
+      <p class="footer__copy">&copy; 2024 Alexander Osorio Munera. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/573001234567" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

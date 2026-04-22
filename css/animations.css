@@ -1,0 +1,187 @@
+/* ============================================
+   ANIMATIONS & KEYFRAMES
+   ============================================ */
+
+/* ============ KEYFRAMES ============ */
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -50px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(40px, 30px) scale(1.02); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  50% { transform: translateX(-50%) translateY(12px); opacity: 0.3; }
+}
+
+@keyframes revealText {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.4); }
+  50% { box-shadow: 0 0 20px 4px rgba(255, 107, 53, 0.2); }
+}
+
+@keyframes pillFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* ============ HERO TEXT REVEAL ============ */
+.reveal-text {
+  opacity: 0;
+  animation: revealText 0.8s var(--ease-out) forwards;
+}
+
+/* ============ SCROLL-TRIGGERED CLASSES ============ */
+
+/* These start hidden and are animated when .is-visible is added by IntersectionObserver */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.anim-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anim-slide-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.anim-slide-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.anim-slide-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.anim-slide-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.anim-scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.anim-scale-in.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ============ STAGGER CHILDREN ============ */
+/* Add delay based on child index */
+.anim-stagger > *:nth-child(1) { transition-delay: 0.05s; }
+.anim-stagger > *:nth-child(2) { transition-delay: 0.1s; }
+.anim-stagger > *:nth-child(3) { transition-delay: 0.15s; }
+.anim-stagger > *:nth-child(4) { transition-delay: 0.2s; }
+.anim-stagger > *:nth-child(5) { transition-delay: 0.25s; }
+.anim-stagger > *:nth-child(6) { transition-delay: 0.3s; }
+.anim-stagger > *:nth-child(7) { transition-delay: 0.35s; }
+.anim-stagger > *:nth-child(8) { transition-delay: 0.4s; }
+
+/* ============ TIMELINE ANIMATIONS ============ */
+.timeline__item.is-visible .timeline__card {
+  animation: fadeUp 0.6s var(--ease-out) forwards;
+}
+
+.timeline__item:nth-child(odd).is-visible .timeline__card {
+  animation: slideLeft 0.6s var(--ease-out) forwards;
+}
+
+.timeline__item:nth-child(even).is-visible .timeline__card {
+  animation: slideRight 0.6s var(--ease-out) forwards;
+}
+
+/* ============ SKILL PILL HOVER ============ */
+.skill-pill {
+  transition: all 0.3s var(--ease-out);
+}
+
+/* ============ PREFERS REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .anim-fade-up,
+  .anim-slide-left,
+  .anim-slide-right,
+  .anim-scale-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__orb {
+    animation: none;
+  }
+}
