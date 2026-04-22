@@ -91,13 +91,42 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.textContent = '...';
       btn.disabled = true;
 
+      const isMailto = form.action.startsWith('mailto:');
+
+      // Mailto flow: open the visitor's mail client pre-filled.
+      if (isMailto) {
+        const name = (form.querySelector('#name')?.value || '').trim();
+        const email = (form.querySelector('#email')?.value || '').trim();
+        const message = (form.querySelector('#message')?.value || '').trim();
+        const to = form.action.replace(/^mailto:/, '');
+        const subject = `Website contact from ${name || 'alexanderom.co visitor'}`;
+        const body =
+          `${message}\n\n` +
+          `----\n` +
+          `From: ${name}\n` +
+          `Reply-to: ${email}\n` +
+          `Sent via the contact form at alexanderom.co`;
+        const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+
+        btn.textContent = '✓';
+        btn.style.background = 'var(--green, #00ED64)';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          btn.disabled = false;
+          form.reset();
+        }, 2500);
+        return;
+      }
+
+      // HTTP form-backend flow (Formspree, Web3Forms, etc.)
       try {
         const response = await fetch(form.action, {
           method: 'POST',
           body: new FormData(form),
           headers: { 'Accept': 'application/json' }
         });
-
         if (response.ok) {
           btn.textContent = '✓';
           btn.style.background = 'var(--teal)';
