@@ -41,8 +41,8 @@ const translations = {
     'timeline.2001.text': 'Joined the Colombian National Police. Completed one year of training as Patrullero, followed by two years of service as a professional police officer — learning discipline, structure, and public service.',
     'timeline.2004.title': 'Moved to London — Cleaner at Westminster',
     'timeline.2004.text': 'Emigrated to London from Colombia without a word of English. Took the first job I could find — cleaning floors at the University of Westminster — and started learning the language the way a child does: by listening, failing, and trying again. Years later, I would graduate from that same building with First Class Honours.',
-    'timeline.2006.title': 'Westminster University — BSc Computer Science',
-    'timeline.2006.text': 'Enrolled in Computer Science at the same university where I once cleaned floors. Graduated with First Class Honours.',
+    'timeline.2006.title': 'Westminster University — BSc Mobile Communications',
+    'timeline.2006.text': 'Enrolled in BSc Mobile Communications Engineering at the University of Westminster — trading the mop for a lecture hall in the same building. Graduated four years later with First Class Honours.',
     'timeline.2008.title': 'Freelance Web Developer',
     'timeline.2008.text': 'Started freelancing, building websites and web applications for small businesses in London.',
     'timeline.2009.title': 'Telecom Engineer — WiMAX',
@@ -252,7 +252,7 @@ const translations = {
 
     // Education
     'education.title': 'Education & Certifications',
-    'education.bsc.degree': 'BSc Computer Science (First Class Honours)',
+    'education.bsc.degree': 'BSc Mobile Communications Engineering (First Class Honours)',
     'education.bsc.institution': 'University of Westminster, London',
     'education.mba.degree': 'MBA — Master of Business Administration',
     'education.mba.institution': 'University of Wales Trinity Saint David',
@@ -325,8 +325,8 @@ const translations = {
     'timeline.2001.text': 'Ingresó a la Policía Nacional de Colombia. Completó un año de formación como Patrullero, seguido de dos años de servicio como policía profesional — aprendiendo disciplina, estructura y servicio público.',
     'timeline.2004.title': 'Llegada a Londres — Limpieza en Westminster',
     'timeline.2004.text': 'Emigré a Londres desde Colombia sin hablar una palabra de inglés. Tomé el primer trabajo que pude encontrar — limpiando pisos en la Universidad de Westminster — y empecé a aprender el idioma como lo aprende un niño: escuchando, equivocándome, intentándolo de nuevo. Años después, me graduaría en ese mismo edificio con honores de primera clase.',
-    'timeline.2006.title': 'Universidad de Westminster — BSc Ciencias de la Computación',
-    'timeline.2006.text': 'Me matriculé en Ciencias de la Computación en la misma universidad donde alguna vez limpié pisos. Me gradué con honores de primera clase.',
+    'timeline.2006.title': 'Universidad de Westminster — BSc Ingeniería en Comunicaciones Móviles',
+    'timeline.2006.text': 'Me matriculé en BSc Ingeniería en Comunicaciones Móviles en la Universidad de Westminster — cambiando el trapeador por un aula en el mismo edificio. Cuatro años después, me gradué con honores de primera clase.',
     'timeline.2008.title': 'Desarrollador Web Freelance',
     'timeline.2008.text': 'Comencé como freelance, construyendo sitios web y aplicaciones para pequeñas empresas en Londres.',
     'timeline.2009.title': 'Ingeniero de Telecomunicaciones — WiMAX',
@@ -536,7 +536,7 @@ const translations = {
 
     // Education
     'education.title': 'Educación y Certificaciones',
-    'education.bsc.degree': 'BSc Ciencias de la Computación (Honores de Primera Clase)',
+    'education.bsc.degree': 'BSc Ingeniería en Comunicaciones Móviles (Honores de Primera Clase)',
     'education.bsc.institution': 'Universidad de Westminster, Londres',
     'education.mba.degree': 'MBA — Maestría en Administración de Empresas',
     'education.mba.institution': 'Universidad de Gales Trinity Saint David',
