@@ -109,6 +109,7 @@ a:hover { text-decoration: underline; }
 .cv-contact {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 10px 18px;
   font-family: var(--font-mono);
   font-size: 8.5pt;
@@ -119,6 +120,48 @@ a:hover { text-decoration: underline; }
   white-space: nowrap;
 }
 .cv-contact a:hover { color: var(--cv-green); }
+
+/* ============ SITE BADGE (alexanderom.co) ============ */
+.cv-site-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 5px 12px 5px 10px;
+  border-radius: 999px;
+  background: var(--cv-green-bg);
+  border: 1.5px solid var(--cv-green);
+  color: var(--cv-green) !important;
+  font-family: var(--font-display);
+  font-size: 9.5pt;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-decoration: none !important;
+  transition: transform .15s ease, box-shadow .15s ease;
+  position: relative;
+}
+.cv-site-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0,104,74,0.18);
+  background: var(--cv-green);
+  color: var(--cv-paper) !important;
+}
+.cv-site-badge:hover .cv-site-badge__hint { color: rgba(255,255,255,0.75); }
+.cv-site-badge__icon {
+  font-size: 10pt;
+  color: var(--cv-green-br);
+  line-height: 1;
+  transform: translateY(1px);
+}
+.cv-site-badge:hover .cv-site-badge__icon { color: var(--cv-paper); }
+.cv-site-badge__label { font-weight: 700; }
+.cv-site-badge__hint {
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  font-weight: 500;
+  color: var(--cv-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
 
 /* ============ SECTION ============ */
 .cv-section {
@@ -375,15 +418,32 @@ a:hover { text-decoration: underline; }
 /* ============ FOOTER NOTE ============ */
 .cv-footer {
   margin-top: 28px;
-  padding-top: 14px;
-  border-top: 1px solid var(--cv-line);
-  text-align: center;
+  padding: 14px 18px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--cv-green-bg), rgba(0,237,100,0.04));
+  border-left: 4px solid var(--cv-green);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
   font-family: var(--font-mono);
-  font-size: 8pt;
-  color: var(--cv-muted);
-  letter-spacing: 0.3px;
+  font-size: 8.5pt;
+  color: var(--cv-ink-2);
+  letter-spacing: 0.2px;
 }
-.cv-footer a { color: var(--cv-green); font-weight: 500; }
+.cv-footer__cta { flex: 1; min-width: 220px; }
+.cv-footer__link {
+  color: var(--cv-green) !important;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 10pt;
+  letter-spacing: 0.3px;
+  border-bottom: 2px solid var(--cv-green);
+  padding-bottom: 1px;
+}
+.cv-footer__link:hover { text-decoration: none; color: var(--cv-green-br) !important; }
+.cv-footer__date { color: var(--cv-muted); font-size: 7.5pt; }
 
 /* ============ PRINT ============ */
 @page {
@@ -417,4 +477,20 @@ a:hover { text-decoration: underline; }
   .cv-photo {
     box-shadow: 0 0 0 2px var(--cv-green);
   }
+
+  /* Keep the site badge and footer stylings in print */
+  .cv-site-badge {
+    background: var(--cv-green-bg) !important;
+    border-color: var(--cv-green) !important;
+    color: var(--cv-green) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .cv-site-badge__icon { color: var(--cv-green) !important; }
+  .cv-site-badge__hint { color: var(--cv-muted) !important; }
+  .cv-footer {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .cv-footer__link { color: var(--cv-green) !important; }
 }
