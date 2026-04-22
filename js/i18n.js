@@ -502,7 +502,7 @@ const translations = {
     'spotlight.research.q5.body': 'Los currículums paralelos EN / FR / ES hacen observables los efectos de transferencia desde L1 a escala. ¿Dónde acelera la transferencia positiva la progresión, y dónde la frena la interferencia? Una colaboración de investigación bien diseñada podría producir respuestas publicables.',
     'spotlight.research.q6.title': 'Voz equitativa en el salón',
     'spotlight.research.q6.body': 'El salón por turnos de Talky le da tiempo de habla a los 50 estudiantes, no solo a quienes alzan la mano. Un experimento natural: comparar volumen de output L2 y ganancia de precisión frente a salones tradicionales.',
-    'spotlight.p4.footer': 'Talky está posicionado para ser a la vez un producto comercial y un instrumento de investigación. Para investigadores de lingüística aplicada y Computer-Assisted Language Learning (CALL), ofrece una plataforma desplegada donde hipótesis sobre andamiaje adaptativo, pedagogía LSP y CALL ubicuo pueden probarse con estudiantes reales.
+    'spotlight.p4.footer': 'Talky está posicionado para ser a la vez un producto comercial y un instrumento de investigación. Para investigadores de lingüística aplicada y Computer-Assisted Language Learning (CALL), ofrece una plataforma desplegada donde hipótesis sobre andamiaje adaptativo, pedagogía LSP y CALL ubicuo pueden probarse con estudiantes reales.',
 
     // Books
     'books.title': 'Libros Publicados',
