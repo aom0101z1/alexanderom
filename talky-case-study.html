@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talky — A Conversation Design Case Study · Alexander Osorio Múnera</title>
+  <meta name="description" content="A conversation design case study of Talky — the multi-language AI tutor platform designed by Alexander Osorio Múnera. Multi-turn dialogue architecture, 3-layer speech evaluation, emotion-aware coaching, and 9-language scale.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/case-study.css">
+</head>
+<body>
+
+<div class="cs-doc">
+
+  <!-- ============ COVER ============ -->
+  <section class="cs-cover">
+    <p class="cs-cover__kicker">Conversation Design · Case Study</p>
+    <h1 class="cs-cover__title">TALKY</h1>
+    <p class="cs-cover__subtitle">Designing multi-turn, multi-language, adaptive AI-tutor dialogue for nine languages, eight Professional English tracks, and ambient voice hardware.</p>
+
+    <div class="cs-scale">
+      <div class="cs-scale__item"><span class="cs-scale__value">9</span><span class="cs-scale__label">Languages</span></div>
+      <div class="cs-scale__item"><span class="cs-scale__value">8</span><span class="cs-scale__label">Prof. Eng. Tracks</span></div>
+      <div class="cs-scale__item"><span class="cs-scale__value">140+</span><span class="cs-scale__label">Curriculum Books</span></div>
+      <div class="cs-scale__item"><span class="cs-scale__value">75K+</span><span class="cs-scale__label">Q&amp;A Items</span></div>
+      <div class="cs-scale__item"><span class="cs-scale__value">A1→C1</span><span class="cs-scale__label">CEFR Range</span></div>
+      <div class="cs-scale__item"><span class="cs-scale__value">50</span><span class="cs-scale__label">Live Classroom</span></div>
+    </div>
+
+    <div class="cs-cover__byline">
+      <span><strong>Alexander Osorio Múnera</strong> · Founder &amp; Lead Architect</span>
+      <span>Pereira, Colombia</span>
+      <a href="https://alexanderom.co">alexanderom.co</a>
+      <a href="mailto:admin@ciudadbilingue.com">admin@ciudadbilingue.com</a>
+    </div>
+  </section>
+
+  <!-- ============ BODY ============ -->
+  <div class="cs-body">
+
+    <!-- ===== 01 CONTEXT ===== -->
+    <section class="cs-section">
+      <p class="cs-section__num">01 · Context</p>
+      <h2 class="cs-section__title">Why conversation design, not gamification</h2>
+      <p class="cs-section__lede">After a decade of teaching English to children and adults at Ciudad Bilingüe — a bilingual school I co-founded in Colombia in 2015 — I kept seeing the same pattern in consumer language apps: learners could tap through a streak for a year and still freeze when asked to <em>speak</em>. The missing layer wasn't content. It was the conversation.</p>
+
+      <p>Talky is my answer. It is audio-first, production-centered, and organised around one premise: the tutor–learner turn is the primary UX surface, and every other system — curriculum sequencing, hardware, classroom mode, AR — exists to serve that one surface.</p>
+
+      <div class="cs-callout">
+        <p class="cs-callout__kicker">The thesis</p>
+        <p>A language-learning app's quality is the quality of the turn it produces. Everything else is scaffolding around that turn.</p>
+      </div>
+    </section>
+
+    <!-- ===== 02 INTENT TAXONOMY ===== -->
+    <section class="cs-section">
+      <p class="cs-section__num">02 · Intent Taxonomy</p>
+      <h2 class="cs-section__title">What a tutor turn actually does</h2>
+      <p class="cs-section__lede">Before designing a dialog, I defined the six things a tutor turn can do. Every generated response is tagged with one of these intents; every intent has its own prompt shape, its own voice persona, and its own fallback.</p>
+
+      <div class="cs-intents">
+        <div class="cs-intent">
+          <h4 class="cs-intent__name">Elicit</h4>
+          <p class="cs-intent__body">Open a turn. Ask a CEFR-targeted question the learner is ready to answer in the target language.</p>
+        </div>
+        <div class="cs-intent">
+          <h4 class="cs-intent__name">Assess</h4>
+          <p class="cs-intent__body">Score the learner's production on keywords, similarity, length, and grammar. Return a structured rubric, not a raw STT confidence.</p>
+        </div>
+        <div class="cs-intent">
+          <h4 class="cs-intent__name">Correct</h4>
+          <p class="cs-intent__body">Offer a targeted fix — phonetic, lexical, or grammatical — without breaking flow or pride. Style depends on emotion signal.</p>
+        </div>
+        <div class="cs-intent">
+          <h4 class="cs-intent__name">Encourage</h4>
+          <p class="cs-intent__body">Keep the learner in the 75% flow zone. Praise is earned and specific — not a participation trophy.</p>
+        </div>
+        <div class="cs-intent">
+          <h4 class="cs-intent__name">Re-scaffold</h4>
+          <p class="cs-intent__body">Learner is below flow zone. Drop difficulty, simplify the prompt, model the target utterance, retry.</p>
+        </div>
+        <div class="cs-intent">
+          <h4 class="cs-intent__name">Escalate</h4>
+          <p class="cs-intent__body">Repeated failure or emotional drop. Switch persona to <em>patient</em>, lower the stakes, offer a break, flag for human tutor review.</p>
+        </div>
+      </div>
+
+      <p>These six intents are the conversation's grammar. An adult tutor turn in <strong>Business English B1</strong> looks very different from a kids' turn in <strong>Spanish A2</strong> — but they compose from the same six verbs.</p>
+    </section>
+
+    <!-- ===== 03 TURN ARCHITECTURE ===== -->
+    <section class="cs-section">
+      <p class="cs-section__num">03 · Turn Architecture</p>
+      <h2 class="cs-section__title">From utterance to response in one turn</h2>
+      <p class="cs-section__lede">Each learner turn is processed through a deterministic pipeline. The LLM is only one station in the pipeline, and it never speaks without rubric evidence behind it.</p>
+
+      <div class="cs-diagram">
+        <svg viewBox="0 0 820 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+              <path d="M0,0 L8,4 L0,8 z" fill="#00684A"/>
+            </marker>
+          </defs>
+          <!-- boxes -->
+          <g font-family="Inter, sans-serif" font-size="10" font-weight="600">
+            <rect x="10" y="70" width="110" height="60" rx="10" fill="#F5F7F8" stroke="#5D6C74" stroke-width="1.5"/>
+            <text x="65" y="95" text-anchor="middle" fill="#0B1E28">Learner speaks</text>
+            <text x="65" y="110" text-anchor="middle" fill="#5D6C74" font-size="8" font-family="JetBrains Mono, monospace">EN / ES / etc.</text>
+
+            <rect x="140" y="70" width="100" height="60" rx="10" fill="#E5F4EE" stroke="#00684A" stroke-width="1.5"/>
+            <text x="190" y="92" text-anchor="middle" fill="#00684A">STT</text>
+            <text x="190" y="108" text-anchor="middle" fill="#5D6C74" font-size="8" font-family="JetBrains Mono, monospace">Whisper</text>
+            <text x="190" y="120" text-anchor="middle" fill="#5D6C74" font-size="7.5" font-family="JetBrains Mono, monospace">+ Azure Speech</text>
+
+            <rect x="260" y="40" width="180" height="120" rx="10" fill="#FAFAFC" stroke="#00684A" stroke-width="2"/>
+            <text x="350" y="62" text-anchor="middle" fill="#00684A" font-size="11" font-weight="700">3-Layer Evaluation</text>
+            <line x1="280" y1="70" x2="420" y2="70" stroke="#CFD6DC" stroke-width="1"/>
+            <text x="350" y="88" text-anchor="middle" fill="#0B1E28" font-size="9">L1 · Exact-match keys</text>
+            <text x="350" y="105" text-anchor="middle" fill="#0B1E28" font-size="9">L2 · Grammar + keyword</text>
+            <text x="350" y="122" text-anchor="middle" fill="#0B1E28" font-size="9">L3 · AI judge (rubric)</text>
+            <text x="350" y="145" text-anchor="middle" fill="#5D6C74" font-size="7.5" font-family="JetBrains Mono, monospace">keys 50% · sim 30% · len 10% · gr 10%</text>
+
+            <rect x="460" y="40" width="160" height="60" rx="10" fill="#E5F4EE" stroke="#00684A" stroke-width="1.5"/>
+            <text x="540" y="60" text-anchor="middle" fill="#00684A">Intent Router</text>
+            <text x="540" y="76" text-anchor="middle" fill="#0B1E28" font-size="8.5" font-family="JetBrains Mono, monospace">assess / correct</text>
+            <text x="540" y="90" text-anchor="middle" fill="#0B1E28" font-size="8.5" font-family="JetBrains Mono, monospace">encourage / rescaffold</text>
+
+            <rect x="460" y="110" width="160" height="60" rx="10" fill="#F5F7F8" stroke="#5D6C74" stroke-width="1.5"/>
+            <text x="540" y="130" text-anchor="middle" fill="#0B1E28">Persona Selector</text>
+            <text x="540" y="146" text-anchor="middle" fill="#5D6C74" font-size="8.5" font-family="JetBrains Mono, monospace">encouraging / analytical</text>
+            <text x="540" y="160" text-anchor="middle" fill="#5D6C74" font-size="8.5" font-family="JetBrains Mono, monospace">patient</text>
+
+            <rect x="640" y="70" width="100" height="60" rx="10" fill="#E5F4EE" stroke="#00684A" stroke-width="1.5"/>
+            <text x="690" y="92" text-anchor="middle" fill="#00684A">LLM</text>
+            <text x="690" y="108" text-anchor="middle" fill="#5D6C74" font-size="8" font-family="JetBrains Mono, monospace">GPT-4o-mini</text>
+            <text x="690" y="120" text-anchor="middle" fill="#5D6C74" font-size="7.5" font-family="JetBrains Mono, monospace">+ rubric context</text>
+
+            <rect x="755" y="70" width="55" height="60" rx="10" fill="#FFFAE3" stroke="#B8901E" stroke-width="1.5"/>
+            <text x="782" y="95" text-anchor="middle" fill="#7A5C0F">TTS</text>
+            <text x="782" y="110" text-anchor="middle" fill="#5D6C74" font-size="7.5" font-family="JetBrains Mono, monospace">Azure</text>
+            <text x="782" y="120" text-anchor="middle" fill="#5D6C74" font-size="7.5" font-family="JetBrains Mono, monospace">ElevenLabs</text>
+          </g>
+
+          <!-- arrows -->
+          <g stroke="#00684A" stroke-width="1.5" fill="none">
+            <line x1="122" y1="100" x2="138" y2="100" marker-end="url(#arrowhead)"/>
+            <line x1="242" y1="100" x2="258" y2="100" marker-end="url(#arrowhead)"/>
+            <line x1="442" y1="85" x2="458" y2="70" marker-end="url(#arrowhead)"/>
+            <line x1="442" y1="120" x2="458" y2="140" marker-end="url(#arrowhead)"/>
+            <line x1="622" y1="70" x2="638" y2="92" marker-end="url(#arrowhead)"/>
+            <line x1="622" y1="140" x2="638" y2="110" marker-end="url(#arrowhead)"/>
+            <line x1="742" y1="100" x2="753" y2="100" marker-end="url(#arrowhead)"/>
+          </g>
+        </svg>
+        <p class="cs-diagram__caption">A single learner turn. The LLM speaks only after deterministic evaluation and intent routing have fixed the rubric.</p>
+      </div>
+
+      <p>Three things matter about this pipeline. <strong>First</strong>, the LLM never grades in a vacuum — it receives the structured evaluation output and generates a turn aligned to that rubric. <strong>Second</strong>, the intent router is deterministic: it picks <em>correct</em> or <em>encourage</em> or <em>re-scaffold</em> from the score distribution before the LLM ever sees the prompt. <strong>Third</strong>, the persona is selected independently from the intent, so a <em>correct</em> turn can be delivered gently, analytically, or patiently depending on the learner's current emotional state.</p>
+    </section>
+
+    <!-- ===== 04 SAMPLE DIALOG ===== -->
+    <section class="cs-section">
+      <p class="cs-section__num">04 · Sample Multi-Turn Dialog</p>
+      <h2 class="cs-section__title">Business English B1, Interview Prep track</h2>
+      <p class="cs-section__lede">A real-ish turn sequence from Talky's Interview Prep module. The learner is practising a salary-negotiation response. System annotations in grey show what the router and evaluator did between turns.</p>
+
+      <div class="cs-dialog">
+        <div class="cs-turn cs-turn--tutor">
+          <span class="cs-turn__label">Tutor</span>
+          <div class="cs-turn__bubble">
+            Great — you're practising a tricky moment. The recruiter just said: <em>"Our budget for this role is $60,000."</em> Your number is $75,000. Respond to them. Try to (1) acknowledge, (2) reframe, (3) propose.
+            <span class="cs-turn__meta">intent: ELICIT · level: B1 · persona: analytical · band: 14/25</span>
+          </div>
+        </div>
+
+        <div class="cs-turn cs-turn--learner">
+          <span class="cs-turn__label">Learner</span>
+          <div class="cs-turn__bubble">
+            Thank for the offer, but I am looking more money. 75 thousand is better for me based on my experience.
+          </div>
+        </div>
+
+        <div class="cs-turn cs-turn--system">
+          <span class="cs-turn__label">System</span>
+          <div class="cs-turn__bubble">
+            L1: 2/3 structural keys hit (acknowledge ✓, propose ✓, reframe ✗). L2: grammar — missing article + wrong preposition. L3 composite: 0.58. Emotion: confident. Intent: <strong>CORRECT</strong> (lexical first, grammar second). Persona: <strong>analytical</strong>.
+          </div>
+        </div>
+
+        <div class="cs-turn cs-turn--tutor">
+          <span class="cs-turn__label">Tutor</span>
+          <div class="cs-turn__bubble">
+            Solid structure — you acknowledged and proposed. One missing piece: the <em>reframe</em>. Recruiters hear "I want more" much better when it's tied to <em>value</em>, not experience alone. Try: <em>"Thanks for the offer. Based on the scope of the role and the impact I can deliver on X, I was thinking closer to $75,000 — does that work?"</em> Now you — same scenario, add the reframe.
+            <span class="cs-turn__meta">intent: CORRECT · surfaces: reframe missing, grammar deferred · no praise inflation</span>
+          </div>
+        </div>
+
+        <div class="cs-turn cs-turn--learner">
+          <span class="cs-turn__label">Learner</span>
+          <div class="cs-turn__bubble">
+            Thanks for the offer. Based on the scope of the role and the value I can bring to the team, I was thinking closer to 75,000. Does that work for you?
+          </div>
+        </div>
+
+        <div class="cs-turn cs-turn--system">
+          <span class="cs-turn__label">System</span>
+          <div class="cs-turn__bubble">
+            L1: 3/3 keys hit. L3 composite: 0.91. Emotion: confident+. Intent: <strong>ENCOURAGE</strong> (earned). Persona remains analytical. Band promoted 14→15.
+          </div>
+        </div>
+
+        <div class="cs-turn cs-turn--tutor">
+          <span class="cs-turn__label">Tutor</span>
+          <div class="cs-turn__bubble">
+            That's the one. Notice how the <em>reframe</em> changed the whole register — it moved you from "asking" to "proposing." That's the exact move recruiters respond to. We'll push one band harder next round.
+            <span class="cs-turn__meta">intent: ENCOURAGE · specific · forward-looking · no filler</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 05 SPEECH EVAL ===== -->
+    <section class="cs-section">
+      <p class="cs-section__num">05 · Speech Evaluation</p>
+      <h2 class="cs-section__title">Three layers, one rubric</h2>
+      <p class="cs-section__lede">Acoustic STT confidence is a poor proxy for pedagogical correctness — a learner can mumble a perfect answer, or say the wrong thing clearly. Talky's cascade separates <em>did they say anything</em> from <em>did they say the right thing</em>.</p>
+
+      <div class="cs-two-col">
+        <div>
+          <h4 style="font-family: var(--font-display); color: var(--cs-green); margin:0 0 6px; font-size:11pt;">L1 — Deterministic key-matching</h4>
+          <p>Each curriculum unit declares its key structural phrases (e.g. <em>"thanks for…"</em>, <em>"based on…"</em>). Literal keys are hit or missed. Fast, cheap, never wrong about what it measures.</p>
+
+          <h4 style="font-family: var(--font-display); color: var(--cs-green); margin:12px 0 6px; font-size:11pt;">L2 — Local grammar + keyword analysis</h4>
+          <p>Lightweight parser flags missing articles, wrong prepositions, tense mismatches. Counts domain keywords relative to unit vocabulary. No network call.</p>
+        </div>
+        <div>
+          <h4 style="font-family: var(--font-display); color: var(--cs-green); margin:0 0 6px; font-size:11pt;">L3 — AI judge with rubric injection</h4>
+          <p>Only invoked when L1/L2 are ambiguous. The LLM is handed the rubric and the utterance; it returns a composite score: <strong>keys 50% · similarity 30% · length 10% · grammar 10%</strong>, with hard caps on meaning errors (a semantic flip — <em>"I will"</em> vs <em>"I won't"</em> — drops the score regardless of how good the grammar looked).</p>
+
+          <h4 style="font-family: var(--font-display); color: var(--cs-green); margin:12px 0 6px; font-size:11pt;">Alignment over accuracy</h4>
+          <p>The goal isn't a maximally accurate score. It's a score <strong>aligned with teacher judgment</strong> — one an experienced instructor would defend if audited. Every rubric comes from classroom recordings of real lessons at Ciudad Bilingüe.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 06 PERSONA & EMOTION ===== -->
+    <section class="cs-section">
+      <p class="cs-section__num">06 · Persona &amp; Emotion</p>
+      <h2 class="cs-section__title">The same correction, three ways</h2>
+      <p class="cs-section__lede">The same intent delivered differently is a different turn. Talky tracks motivation, confidence, and frustration as independent signals and routes the generated response through one of three tutor personas.</p>
+
+      <div class="cs-dialog">
+        <div class="cs-turn cs-turn--system"><span class="cs-turn__label">Scenario</span><div class="cs-turn__bubble">Learner missed a preposition. Intent: CORRECT. All three deliveries are equally valid.</div></div>
+
+        <div class="cs-turn cs-turn--tutor"><span class="cs-turn__label">Encouraging</span><div class="cs-turn__bubble">Almost — tiny tweak. "<em>on</em>" instead of "<em>in</em>" there. You've been getting these all morning, let's keep rolling.</div></div>
+
+        <div class="cs-turn cs-turn--tutor"><span class="cs-turn__label">Analytical</span><div class="cs-turn__bubble">Preposition slip: "<em>based on</em>" is fixed — <em>on</em> attaches to the reasoning. "<em>based in</em>" would mean physical location. Say it once more cleanly?</div></div>
+
+        <div class="cs-turn cs-turn--tutor"><span class="cs-turn__label">Patient</span><div class="cs-turn__bubble">No stress. It's just <em>on</em>, not <em>in</em>. That's the only thing to change. Take your time.</div></div>
+      </div>
+
+      <p>Persona selection is independent of intent. The same correction reaches an adult interview-prep learner and a seven-year-old kid through totally different voices — but through the same architecture. That's the reusability story.</p>
+    </section>
+
+    <!-- ===== 07 SCALE & SURFACES ===== -->
+    <section class="cs-section">
+      <p class="cs-section__num">07 · Scale &amp; Surfaces</p>
+      <h2 class="cs-section__title">One conversation model, five surfaces</h2>
+      <p class="cs-section__lede">Mobile app, live classroom, AR (for kids), 1:1 video tutoring, and an ambient ESP32 voice device (TutorPal). The intent taxonomy and the evaluation cascade are shared across all five — what changes is the turn's <em>shape</em>.</p>
+
+      <ul>
+        <li><strong>Mobile.</strong> Text + voice input, multi-turn, full rubric visible on demand. The default surface.</li>
+        <li><strong>Classroom (50 students live).</strong> The tutor turn becomes a broadcast; learner responses are batched and scored in parallel; persona shifts to <em>analytical</em> so the public feedback generalises.</li>
+        <li><strong>AR Kids.</strong> The tutor is an animated character anchored in the room. Intents stay; latency budget is tighter; personas bias toward <em>encouraging</em> and <em>patient</em>.</li>
+        <li><strong>Video 1:1.</strong> The tutor is a human; the AI is relegated to real-time captioning, on-screen rubric hints, and post-session summary.</li>
+        <li><strong>TutorPal (ambient ESP32).</strong> No screen. Turn is audio-only, shorter, and lowered-stakes — a "quick drill" mode aimed at incidental exposure, not progression.</li>
+      </ul>
+
+      <div class="cs-callout">
+        <p class="cs-callout__kicker">Design principle</p>
+        <p>Every surface is a different physical context but the same conversation spine. Intents and evaluation are shared; only the turn length, pacing, and modality change. This is what lets a 5-person team ship for 9 languages across 5 form factors.</p>
+      </div>
+    </section>
+
+    <!-- ===== 08 WHY THIS MATTERS FOR NETFLIX ===== -->
+    <section class="cs-section">
+      <p class="cs-section__num">08 · Relevance</p>
+      <h2 class="cs-section__title">What I'd bring to a customer-support virtual-agent team</h2>
+      <p>A Netflix member hitting the virtual agent at 11pm with a billing problem is, structurally, a learner hitting Talky — a human in a high-stakes multi-turn conversation with an AI that needs to route intent, track emotion, maintain persona, and know when to escalate. The surface is different; the craft is the same.</p>
+
+      <ul>
+        <li><strong>Intent design, not prompt hacking.</strong> I think in turn-taxonomies and rubrics, then write the prompts to match. Prompt iteration without a rubric is noise.</li>
+        <li><strong>Emotion as a first-class signal.</strong> Detecting when a member is escalating, retreating, or disengaging — and switching persona rather than script — is the difference between a helpful agent and a frustrating one.</li>
+        <li><strong>Reusable, multilingual frameworks.</strong> Shipping the same conversation grammar across 9 languages teaches you which patterns generalise, which need localisation, and which need to be re-thought from the ground up per locale.</li>
+        <li><strong>Voice and chat parity.</strong> The same intent must read well as text and sound right as speech — the evaluation and generation pipelines need to be indifferent to surface.</li>
+        <li><strong>LLM-grounded, rule-reinforced.</strong> I know where LLMs shine (style, recovery, nuance) and where they fail (high-stakes determinism) — and how to compose the two so an enterprise agent is never just "whatever the model said this time."</li>
+      </ul>
+    </section>
+
+    <!-- ===== CLOSING ===== -->
+    <div class="cs-closing">
+      <h3>Where to see this running</h3>
+      <p>Talky launches publicly in 2026 after a full year of content testing. The Talky Spotlight section on my portfolio walks through pedagogy, architecture, Professional English tracks, and the open research questions the platform is positioned to answer.</p>
+      <p style="margin-top:10px;"><strong>Portfolio &amp; architecture diagrams:</strong> <a href="https://alexanderom.co">alexanderom.co</a> &nbsp;·&nbsp; <strong>Talky deep dive:</strong> <a href="https://alexanderom.co/#talky-spotlight">alexanderom.co/#talky-spotlight</a></p>
+      <p style="margin-top:8px;"><strong>Alexander Osorio Múnera</strong> · Builder · Educator · Applied Researcher · Bilingual (EN/ES) · Pereira, Colombia</p>
+      <p><strong>admin@ciudadbilingue.com</strong> · +57 324 297 3737 · <a href="https://www.linkedin.com/in/alexanderosoriomunera/">linkedin.com/in/alexanderosoriomunera</a></p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

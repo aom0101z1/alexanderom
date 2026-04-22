@@ -1,0 +1,369 @@
+/* ============================================
+   Case Study — Talky conversation design
+   Light, print-ready, shares tokens with cv.css
+   ============================================ */
+
+:root {
+  --cs-bg:       #FAFAFC;
+  --cs-paper:    #FFFFFF;
+  --cs-ink:      #0B1E28;
+  --cs-ink-2:    #1F2E37;
+  --cs-muted:    #5D6C74;
+  --cs-muted-2:  #8A97A0;
+  --cs-green:    #00684A;
+  --cs-green-br: #00ED64;
+  --cs-green-bg: rgba(0, 104, 74, 0.08);
+  --cs-navy:     #001E2B;
+  --cs-navy-bg:  rgba(0, 30, 43, 0.04);
+  --cs-line:     #E5E7EB;
+  --cs-line-2:   #CFD6DC;
+  --cs-accent-lime: #B1FF05;
+
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  background: var(--cs-bg);
+  color: var(--cs-ink);
+  font-family: var(--font-body);
+  font-size: 10.5pt;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--cs-green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+strong { color: var(--cs-ink); font-weight: 600; }
+
+.cs-doc {
+  max-width: 860px;
+  margin: 24px auto 80px;
+  padding: 0;
+  background: var(--cs-paper);
+  box-shadow: 0 10px 30px rgba(0,30,43,0.08);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* ============ COVER ============ */
+.cs-cover {
+  padding: 50px 56px 36px;
+  background: linear-gradient(135deg, var(--cs-navy) 0%, #002B3B 100%);
+  color: #ffffff;
+  position: relative;
+}
+.cs-cover::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 5px;
+  background: linear-gradient(90deg, var(--cs-green-br) 0%, var(--cs-green) 100%);
+}
+.cs-cover__kicker {
+  font-family: var(--font-mono);
+  font-size: 8.5pt;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cs-green-br);
+  margin: 0 0 8px;
+}
+.cs-cover__title {
+  font-family: var(--font-display);
+  font-size: 40pt;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin: 0 0 6px;
+  color: #ffffff;
+}
+.cs-cover__subtitle {
+  font-family: var(--font-display);
+  font-size: 13pt;
+  font-weight: 400;
+  color: #C5D8D4;
+  margin: 0 0 22px;
+  line-height: 1.35;
+  max-width: 620px;
+}
+.cs-cover__byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-family: var(--font-mono);
+  font-size: 8.5pt;
+  color: #8FA3A0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.cs-cover__byline strong { color: #ffffff; font-weight: 600; }
+.cs-cover__byline a { color: var(--cs-green-br); }
+
+.cs-scale {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(0, 237, 100, 0.25);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 22px 0 0;
+}
+.cs-scale__item {
+  padding: 12px 10px;
+  text-align: center;
+  background: rgba(0, 30, 43, 0.35);
+}
+.cs-scale__value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 16pt;
+  font-weight: 700;
+  color: var(--cs-green-br);
+  line-height: 1.1;
+}
+.cs-scale__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #8FA3A0;
+  margin-top: 2px;
+}
+
+/* ============ BODY ============ */
+.cs-body {
+  padding: 36px 56px 44px;
+}
+
+.cs-section {
+  margin-bottom: 28px;
+  page-break-inside: avoid;
+}
+
+.cs-section__num {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  color: var(--cs-green);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+.cs-section__title {
+  font-family: var(--font-display);
+  font-size: 18pt;
+  font-weight: 700;
+  color: var(--cs-ink);
+  margin: 0 0 14px;
+  letter-spacing: -0.3px;
+  line-height: 1.15;
+}
+.cs-section__lede {
+  font-size: 11pt;
+  line-height: 1.6;
+  color: var(--cs-ink-2);
+  margin: 0 0 14px;
+  max-width: 680px;
+}
+
+.cs-section p { margin: 8px 0; font-size: 10pt; line-height: 1.6; color: var(--cs-ink-2); }
+.cs-section ul { margin: 8px 0; padding-left: 20px; }
+.cs-section li {
+  font-size: 10pt; line-height: 1.55;
+  margin: 5px 0;
+  color: var(--cs-ink-2);
+}
+.cs-section li::marker { color: var(--cs-green); }
+
+/* ============ DIAGRAM FRAME ============ */
+.cs-diagram {
+  margin: 16px 0;
+  padding: 18px;
+  background: var(--cs-navy-bg);
+  border-radius: 10px;
+  border: 1px solid var(--cs-line);
+}
+.cs-diagram svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cs-diagram__caption {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  color: var(--cs-muted);
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 0.2px;
+}
+
+/* ============ SAMPLE DIALOG ============ */
+.cs-dialog {
+  margin: 16px 0;
+  padding: 18px;
+  background: #FAFBFC;
+  border-radius: 10px;
+  border: 1px solid var(--cs-line);
+}
+.cs-turn {
+  display: flex;
+  gap: 12px;
+  margin: 10px 0;
+  align-items: flex-start;
+}
+.cs-turn__label {
+  flex: 0 0 72px;
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--cs-muted);
+  padding-top: 4px;
+}
+.cs-turn--learner .cs-turn__label { color: var(--cs-navy); }
+.cs-turn--tutor .cs-turn__label { color: var(--cs-green); }
+.cs-turn--system .cs-turn__label { color: var(--cs-muted-2); }
+.cs-turn__bubble {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--cs-ink);
+}
+.cs-turn--learner .cs-turn__bubble { background: #EEF2F5; }
+.cs-turn--tutor .cs-turn__bubble { background: var(--cs-green-bg); border-left: 3px solid var(--cs-green); }
+.cs-turn--system .cs-turn__bubble {
+  background: transparent; font-family: var(--font-mono); font-size: 8.5pt;
+  color: var(--cs-muted); padding: 4px 14px; font-style: italic;
+}
+.cs-turn__meta {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  color: var(--cs-muted-2);
+  letter-spacing: 0.2px;
+}
+
+/* ============ INTENT GRID ============ */
+.cs-intents {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 14px 0;
+}
+.cs-intent {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1.5px solid var(--cs-line);
+  background: var(--cs-paper);
+  border-left: 4px solid var(--cs-green);
+}
+.cs-intent__name {
+  font-family: var(--font-mono);
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--cs-green);
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+.cs-intent__body {
+  font-size: 9.5pt;
+  color: var(--cs-ink-2);
+  line-height: 1.5;
+}
+
+/* ============ TWO COLUMN ============ */
+.cs-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 12px 0;
+}
+
+/* ============ CALLOUT ============ */
+.cs-callout {
+  margin: 14px 0;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, var(--cs-green-bg), rgba(0,237,100,0.03));
+  border-radius: 8px;
+  border-left: 4px solid var(--cs-green);
+}
+.cs-callout__kicker {
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--cs-green);
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+.cs-callout p {
+  margin: 0;
+  font-size: 10pt;
+  line-height: 1.6;
+  color: var(--cs-ink-2);
+}
+
+/* ============ CODE-LIKE DETAIL ============ */
+.cs-detail {
+  font-family: var(--font-mono);
+  font-size: 9pt;
+  background: var(--cs-navy-bg);
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  color: var(--cs-navy);
+  border-left: 3px solid var(--cs-green);
+}
+
+/* ============ CLOSING / CONTACT ============ */
+.cs-closing {
+  margin: 28px 0 0;
+  padding: 22px 26px;
+  background: linear-gradient(135deg, var(--cs-navy) 0%, #002B3B 100%);
+  border-radius: 10px;
+  color: #ffffff;
+}
+.cs-closing h3 {
+  font-family: var(--font-display);
+  font-size: 14pt;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+.cs-closing p {
+  color: #C5D8D4;
+  font-size: 10pt;
+  line-height: 1.6;
+  margin: 6px 0;
+}
+.cs-closing a { color: var(--cs-green-br); font-weight: 600; }
+
+/* ============ PRINT ============ */
+@page { size: A4; margin: 10mm 12mm; }
+
+@media print {
+  html, body { background: #fff; font-size: 9.5pt; }
+  .cs-doc {
+    max-width: none; margin: 0; box-shadow: none; border-radius: 0;
+  }
+  .cs-cover, .cs-body, .cs-closing, .cs-callout, .cs-intent, .cs-diagram,
+  .cs-dialog, .cs-turn--tutor .cs-turn__bubble, .cs-turn--learner .cs-turn__bubble {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .cs-cover { padding: 36px 44px 28px; page-break-after: avoid; }
+  .cs-body { padding: 28px 44px 32px; }
+  .cs-section { margin-bottom: 20px; }
+  .cs-section__title { font-size: 16pt; margin-bottom: 10px; }
+  .cs-section__lede { font-size: 10pt; }
+  a { color: var(--cs-ink) !important; text-decoration: none; }
+}
