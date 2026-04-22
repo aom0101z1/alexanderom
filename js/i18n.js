@@ -46,7 +46,7 @@ const translations = {
     'timeline.2008.title': 'Freelance Web Developer',
     'timeline.2008.text': 'Started freelancing, building websites and web applications for small businesses in London.',
     'timeline.2009.title': 'Urban WiMAX — Intern to RF Engineer',
-    'timeline.2009.text': 'Joined Urban WiMAX in London as an intern in my final year at Westminster — within twelve months I was hired as a Radio Frequency Engineer, formalised as an Innovate UK Knowledge Transfer Partnership role jointly with Westminster. Two years building line-of-sight coverage models across millions of London rooftops; became an accredited WiMAX Forum expert in broadband telecom and RF. Later authored a book on the subject.',
+    'timeline.2009.text': 'Joined Urban WiMAX in London as an intern in my final year at Westminster — in less than six months I was hired as a Radio Frequency Engineer, formalised as an Innovate UK Knowledge Transfer Partnership role jointly with Westminster. Two years building line-of-sight coverage models across millions of London rooftops; became an accredited WiMAX Forum expert in broadband telecom and RF. Later authored a book on the subject.',
     'timeline.2011.title': 'MBA — University of Wales',
     'timeline.2011.text': 'Completed the Master of Business Administration in Entrepreneurship at the University of Wales Lampeter (2009–2010), blending engineering with business strategy.',
     'timeline.2013.title': 'Return to Colombia — Teaching & Entrepreneurship',
