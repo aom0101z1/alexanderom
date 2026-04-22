@@ -1174,6 +1174,14 @@ ul, ol { list-style: none; }
   border-radius: 14px;
 }
 
+.book-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+}
+
 /* Gradient covers */
 .book-card:nth-child(1) .book-card__placeholder { background: linear-gradient(160deg, #00ED64, #00684A); }
 .book-card:nth-child(2) .book-card__placeholder { background: linear-gradient(160deg, #006CFA, #00ED64); }
