@@ -16,6 +16,7 @@ const translations = {
     // Hero
     'hero.tagline': 'Engineer. Educator. Entrepreneur. Builder.',
     'hero.cta': 'View My Work',
+    'hero.cv': 'Read My CV',
     'hero.contact': 'Get in Touch',
 
     // About
@@ -302,6 +303,7 @@ const translations = {
     // Hero
     'hero.tagline': 'Ingeniero. Educador. Emprendedor. Constructor.',
     'hero.cta': 'Ver Mi Trabajo',
+    'hero.cv': 'Ver Mi CV',
     'hero.contact': 'Contáctame',
 
     // About
