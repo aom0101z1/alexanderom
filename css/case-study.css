@@ -331,6 +331,8 @@ strong { color: var(--cs-ink); font-weight: 600; }
   background: linear-gradient(135deg, var(--cs-navy) 0%, #002B3B 100%);
   border-radius: 10px;
   color: #ffffff;
+  page-break-inside: avoid;
+  break-inside: avoid;
 }
 .cs-closing h3 {
   font-family: var(--font-display);
@@ -362,8 +364,10 @@ strong { color: var(--cs-ink); font-weight: 600; }
   }
   .cs-cover { padding: 36px 44px 28px; page-break-after: avoid; }
   .cs-body { padding: 28px 44px 32px; }
-  .cs-section { margin-bottom: 20px; }
+  .cs-section { margin-bottom: 20px; page-break-inside: avoid; break-inside: avoid; }
   .cs-section__title { font-size: 16pt; margin-bottom: 10px; }
   .cs-section__lede { font-size: 10pt; }
+  .cs-closing { page-break-inside: avoid; break-inside: avoid; page-break-before: auto; }
+  .cs-callout, .cs-diagram, .cs-dialog, .cs-intents { page-break-inside: avoid; break-inside: avoid; }
   a { color: var(--cs-ink) !important; text-decoration: none; }
 }
